@@ -1,0 +1,38 @@
+1. ps -aux
+tungnv    8092  3.2  1.1 1521368 96356 ?       Sl   10:51   0:14 evince /home/tu
+tungnv    8098  0.0  0.0 155988  5516 ?        Sl   10:51   0:00 /usr/lib/evince
+root      8153  0.0  0.0      0     0 ?        I    10:51   0:00 [kworker/0:2-rc
+tungnv    8199  0.8  1.8 2473296 147236 ?      Sl   10:52   0:03 /usr/lib/firefo
+root      8250  0.0  0.0      0     0 ?        I    10:53   0:00 [kworker/7:1-ev
+root      8253  0.0  0.0      0     0 ?        I    10:53   0:00 [kworker/u16:2-
+tungnv    8273  0.0  1.0 2387656 81804 ?       Sl   10:54   0:00 /usr/lib/firefo
+tungnv    8329  0.5  0.6 814084 50904 ?        Sl   10:56   0:00 /usr/bin/gedit 
+root      8339  0.0  0.0      0     0 ?        I    10:57   0:00 [kworker/0:1-ev
+tungnv    8345  0.0  0.0  14624  3328 pts/0    R+   10:58   0:00 ps -aux
+
+2. ps -aux | grep gnome-calculator
+tungnv    8707  0.2  0.4 724076 39496 pts/0    Sl+  11:06   0:00 /snap/gnome-calculator/544/usr/bin/gnome-calculator
+tungnv    8863  0.0  0.0  11892   912 pts/1    S+   11:13   0:00 grep --color=auto gnome-calculator
+
+3. cat /proc/8707/status
+Name:	gnome-calculato
+Umask:	0022
+State:	S (sleeping)
+Tgid:	8707
+Ngid:	0
+Pid:	8707
+PPid:	4408
+TracerPid:	0
+Uid:	1000	1000	1000	1000
+Gid:	1000	1000	1000	1000
+
+4. kill -STOP 8707
+[1]+  Stopped                 gnome-calculator
+
+5. kill -CONT 8707
+* gnome-calculator works normally *
+
+6. kill -KILL 8707
+[1]+  Killed                  gnome-calculator
+Killed
+
