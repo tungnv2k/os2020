@@ -1,0 +1,26 @@
+1. ls Downloads/ | grep list
+testlisttest
+
+2. wc /etc/passwd
+  47   84 2816 /etc/passwd
+
+3. free -m
+              total        used        free      shared  buff/cache   available
+Mem:           7860        1759        2994         299        3107        5508
+Swap:         15258           0       15258
+
+4. cat /proc/cpuinfo
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 142
+model name	: Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz
+stepping	: 10
+microcode	: 0xca
+cpu MHz		: 835.426
+cache size	: 8192 KB
+physical id	: 0
+
+5. find Pictures/ -iname '*.jpg'
+Pictures/Screenshot from 2020-01-17 10-43-03.jpg
+
