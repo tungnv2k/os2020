@@ -1,0 +1,72 @@
+1. echo hello world
+hello world
+
+2. passwd
+Changing password for tungnv.
+Current password: 
+New password: 
+Retype new password: 
+passwd: password updated successfully
+
+3. date
+Fri 17 Jan 2020 09:39:45 AM +07
+
+4. hostname
+oh-nooo
+
+5. arch
+x86_64
+
+6. uname -a
+Linux oh-nooo 5.3.0-26-generic #28-Ubuntu SMP Wed Dec 18 05:37:46 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+
+7. dmesg
+[  164.711519] amdgpu: [powerplay] VI should always have 2 performance levels
+[  164.743602] amdgpu 0000:01:00.0: GPU pci config reset
+[  613.116985] [drm] PCIE GART of 256M enabled (table at 0x000000F400000000).
+[  613.126686] amdgpu: [powerplay] can't get the mac of 5
+[  619.383663] amdgpu: [powerplay] VI should always have 2 performance levels
+[  619.421408] amdgpu 0000:01:00.0: GPU pci config reset
+[  620.526552] [drm] PCIE GART of 256M enabled (table at 0x000000F400000000).
+[  620.531462] amdgpu: [powerplay] can't get the mac of 5
+[  625.924394] amdgpu: [powerplay] VI should always have 2 performance levels
+[  625.957467] amdgpu 0000:01:00.0: GPU pci config reset
+
+8. uptime
+ 10:00:05 up 58 min,  1 user,  load average: 0.50, 0.31, 0.29
+
+9. who am i
+* empty *
+
+10. whoami
+tungnv
+
+11. who
+tungnv   :0           2020-01-17 09:01 (:0)
+
+12. id
+uid=1000(tungnv) gid=1000(tungnv) groups=1000(tungnv),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),118(lpadmin),129(sambashare),131(docker)
+
+13. last
+tungnv   :0           :0               Fri Sep 27 18:55 - down   (04:35)
+reboot   system boot  5.0.0-29-generic Fri Sep 27 18:54 - 23:31  (04:36)
+tungnv   :0           :0               Fri Sep 27 14:56 - 14:59  (00:02)
+reboot   system boot  5.0.0-29-generic Fri Sep 27 14:56 - 14:59  (00:02)
+tungnv   :0           :0               Fri Sep 27 08:25 - 14:27  (06:02)
+reboot   system boot  5.0.0-29-generic Fri Sep 27 08:25 - 14:27  (06:02)
+tungnv   :0           :0               Thu Sep 26 23:38 - down   (00:17)
+reboot   system boot  5.0.0-29-generic Thu Sep 26 23:38 - 23:56  (00:18)
+tungnv   :0           :0               Thu Sep 26 20:05 - crash  (03:32)
+reboot   system boot  5.0.0-29-generic Fri Sep 27 03:04 - 23:56  (-3:08)
+
+wtmp begins Fri Sep 27 03:04:18 2019
+
+14. finger
+Command 'finger' not found, but can be installed with:
+
+sudo apt install finger
+
+15. w
+ 10:06:59 up  1:05,  1 user,  load average: 0.18, 0.30, 0.28
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+tungnv   :0       :0               09:01   ?xdm?  12:35   0.00s /usr/lib/gdm3/gdm-x-session --run-script env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --systemd --session=ubuntu
