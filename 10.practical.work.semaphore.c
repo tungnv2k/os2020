@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <pthread.h>
+#include <semaphore.h>
 
-pthread_mutex_t lock;
+sem_t lock;
 
 int isPrime(int p) {
     for (int i = 2; i * i <= p; i++)
@@ -11,29 +12,31 @@ int isPrime(int p) {
 }
 
 void *printPrime() {
-    pthread_mutex_lock(&lock);
     for (int p = 2; p < 1000000; p++) {
-        if(isPrime(p))
+        if(isPrime(p)) {
+            sem_wait(&lock);
             printf("%d\n", p);
+            sem_post(&lock);
+        }
     }
-    pthread_mutex_unlock(&lock);
 }
 
 void *printFibonacci() {
-    pthread_mutex_lock(&lock);
     int t1 = 0, t2 = 1, fib = t1 + t2;
     while (fib <= 1000000) {
+        sem_wait(&lock);
         printf("%d\n", fib);
+        sem_post(&lock);
+
         t1 = t2;
         t2 = fib;
         fib = t1 + t2;
     }
-    pthread_mutex_unlock(&lock);
 }
 
 int main() {
 
-    pthread_mutex_init(&lock, NULL);
+    sem_init(&lock, 0, 1);
 
     pthread_t tid1;
     pthread_t tid2;
@@ -42,7 +45,8 @@ int main() {
 
     pthread_join(tid1, NULL);
     pthread_join(tid2, NULL);
-    pthread_mutex_destroy(&lock);
+
+    sem_destroy(&lock);
 
     return 0;
 }
